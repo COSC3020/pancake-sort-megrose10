@@ -1,4 +1,12 @@
 function flip(array, n) {
+    let newArray = [];
+
+    for(let i=0; i<n; i++) {
+        newArray.push(array[i]);
+    }
+
+    array = unshift(newArray.reverse());
+
     return array;
 }
 
@@ -6,3 +14,4 @@ function flip(array, n) {
 function pancakeSort(array) {
     return array;
 }
+

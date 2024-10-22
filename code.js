@@ -1,11 +1,12 @@
 function flip(array, n) {
     let newArray = [];
 
-    for(let i=0; i<n; i++) {
+    for(let i=n-1; i>0; i--) {
         newArray.push(array[i]);
     }
 
-    array = unshift(newArray.reverse());
+    
+    //array = unshift(newArray.reverse());
 
     return array;
 }
@@ -18,7 +19,7 @@ function pancakeSort(array) {
         return 0;
     }
     for(let i=0;i<size;i++) {
-        for(let j=0;i<size-1;j++) {
+        for(let j=1;i<size-1;j++) {
             if(array[i] < array[j]) {
                 array = flip(array, size);
             }

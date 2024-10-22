@@ -18,7 +18,7 @@ function pancakeSort(array) {
         return 0;
     }
     for(let i=0;i<size;i++) {
-        for(let j=1;i<size-1;j++) {
+        for(let j=0;i<size-1;j++) {
             if(array[i] < array[j]) {
                 flip(array, size);
             }

@@ -13,7 +13,7 @@ function pancakeSort(array) {
 
     let size = array.length();
     if(size == 0){
-        return 0;
+        return array;
     }
     for(let i=0;i<size;i++) {
         for(let j=1;i<size-1;j++) {

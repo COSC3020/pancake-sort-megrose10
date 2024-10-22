@@ -16,11 +16,15 @@ function pancakeSort(array) {
     let size = array.length();
     for(let i=0;i<size;i++) {
         for(let j=0;i<size-1;j++) {
-            if(array[i] > array[j]) {
-                array = flip(array, j);
+            if(array[i] < array[j]) {
+                flip(array, size);
             }
+            if(size<0){
+            size = size - 1;
+            }
+            else return array;
+        }
     }
     
-    return array;
+    
 }
-

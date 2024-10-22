@@ -5,10 +5,7 @@ function flip(array, n) {
         newArray.push(array[i]);
     }
 
-    
-    //array = unshift(newArray.reverse());
-
-    return array;
+    return newArray;
 }
 
 // Use only flip() here to manipulate the array

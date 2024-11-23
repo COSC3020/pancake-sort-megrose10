@@ -21,7 +21,7 @@ function flip(array, n) {
 function pancakeSort(array) {
   let max = 0;
   for(let i = array.length; i > 1; i--) {
-    for(let j = 1; j < i; j++) {
+    for(let j = 0; j < i; j++) {
       if(array[j] > array[max]) {
         max = j;
       }
@@ -36,6 +36,7 @@ function pancakeSort(array) {
   }
   return array;
 }
+//let aTest = [1, 2, 0]
 //let aTest = [5, 4, 3, 1, 2];
 //let newATest = pancakeSort(aTest);
 //console.log(pancakeSort(aTest)); 

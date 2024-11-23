@@ -20,6 +20,7 @@ function flip(array, n) {
 //Use only flip() here to manipulate the array
 function pancakeSort(array) {
   let max = 0;
+  let aLen = array.length - 1;
   for(let i = array.length; i > 1; i--) {
     for(let j = 0; j < i; j++) {
       if(array[j] > array[max]) {
@@ -29,14 +30,14 @@ function pancakeSort(array) {
     if(max == 0) {
       array = flip(array, i);
     }
-    else {
+    else if (max != 0 && max !=aLen) {
       array = flip(array, max + 1);
       array = flip(array, i);
     }
   }
   return array;
 }
-//let aTest = [1, 2, 0]
+//let aTest = [0, 0, 1];
 //let aTest = [5, 4, 3, 1, 2];
 //let newATest = pancakeSort(aTest);
-//console.log(pancakeSort(aTest)); 
+//console.log(pancakeSort(aTest));

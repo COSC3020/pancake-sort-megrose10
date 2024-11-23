@@ -1,55 +1,43 @@
 function flip(array, n) {
-    let newArray = [];
-
-    for(let i=n-1; i>0; i--) {
-        newArray.push(array[i]);
+    //console.log(array[0]);
+    //console.log(array[2]);
+    for(let i = 0; i < (n - 1); i++) {
+      let tmp = array[i];
+      //console.log(tmp + "tmp1");
+      array[i] = array[i+1];
+      //console.log(array[first++]);
+      //console.log(array[0]);
+      //console.log(tmp + "tmp2");
+      array[i+1] = tmp;
+      //console.log(tmp);
+      //console.log(array[first++] + "test");
     }
 
-    return newArray
-}
-
-// Use only flip() here to manipulate the array
-function pancakeSort(array) {
-    let size = array.length;
-    do {
-      let max = array[0];
-      for(let i = 1; i < size; i++) {
-        if(max < array[i]) {
-          max = array[i];
-        }
-      }
-      //console.log(`${max}`);
-      let n = array.indexOf(max);
-      if(n == 0) {
-        if(size == array.length) {
-          flip(array, size + 1)
-          size = size - 1;
-        }
-        else {
-        flip(array, size + 1);
-        }
-      }
-      else {
-        flip(array, n);
-        if(size == array.length) {
-          flip(array, size + 1)
-          size = size - 1;
-        }
-        else {
-          flip(array, size);
-          size = size - 1;
-        }
-        if(n == 0) {
-          flip(array, size + 1);
-        }
-      size = size - 1;
-      }
-    }while(size>0);
     return array;
-    
 }
-let aTest = [5, 4, 3, 1, 2];
-let newATest = pancakeSort(aTest);
-for(let i = 0; i < aTest.length; i++) {
-  console.log(`${newATest[i]}`);
+//let array = [1,2,3,4];
+//console.log(flip(array, 2));
+//Use only flip() here to manipulate the array
+function pancakeSort(array) {
+  let size = array.length;
+  let max = 0;
+  while(size > 1) {
+    for(let i = 1; i < size; i++) {
+      if(array[i] > array[max]) {
+        max = i;
+      }
+    }
+    if(max == 0) {
+      array = flip(array, size);
+    }
+    else {
+      array = flip(array, max + 1);
+      array = flip(array, size);
+    }
+    size--;
+  }
+  return array;
 }
+//let aTest = [5, 4, 3, 1, 2];
+//let newATest = pancakeSort(aTest);
+//console.log(pancakeSort(aTest));

@@ -28,7 +28,7 @@ element into its correct position.
 What is the asymptotic runtime ($\Theta$) of your algorithm in terms of the
 number of comparisons? What is it in terms of the number of flips? Add your
 answer to this markdown file.
-The average asymptotic runtime would be $\Theta(n^2)$, this is because in our main pancake sort function when we find the max value in the part of the array we are looking at this runtime would be $n^2$. Then, if the max value is not already in the front of the array to flip to the other end, we can call the flip function twice, which has a for loop reversing the order and would be $2n$. For the number of flips, like said before, if the max value is in the front at the 0 element posistion then we call flip once resulting in $n$. If the max value is not in the front, we call flip twice resulting in $2n$.
+The average asymptotic runtime would be $\Theta(n^2)$, this is because in our main pancake sort function when we find the max value in the part of the array we are looking at this runtime would be $n^2$. Then, if the max value is not already in the front of the array to flip to the other end, we can call the flip function twice, which has a for loop reversing the order and would be $2n$. For the number of flips, like said before, if the max value is in the front at the 0 element position then we call flip once resulting in $n$. If the max value is not in the front, we call flip twice resulting in $2n$.
 
 
 Citations: I worked with Olivia, Ashlyn, and Cole(Nathanial). I also went to the TA's office hours and found my flip function's logic was incorrect, so I fixed it later. 
